@@ -60,17 +60,12 @@
     </bean>
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
-    <!--data source-->
-    <bean id="myDataSource" class="org.apache.ibatis.datasource.pooled.PooledDataSource">
-        <property name="driver" value="#{appProperties['jdbc.driverClassName']}"/>
-        <property name="url" value="#{appProperties['jdbc.url']}"/>
-        <property name="username" value="#{appProperties['jdbc.username']}"/>
+    <bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" >
+        <property name="driverClassName" value="#{appProperties['jdbc.driverClassName']}"/>
+        <property name="url" value="#{appProperties['jdbc.url']}" />
+        <property name="username" value="#{appProperties['jdbc.username']}" />
         <property name="password" value="#{appProperties['jdbc.password']}"/>
     </bean>
-
-    <!--from dddcqrs -->
-    <!--<bean class="com.incuventure.ddd.infrastructure.events.impl.SimpleEventPublisher"/>-->
-    <!--<bean class="com.incuventure.ddd.infrastructure.events.impl.EventListenerProcessor"/>-->
 
     <!-- Repositories -->
     <bean id="employeeRepository" class="net.incuventure.training.domain.repository.EmployeeRepository" />

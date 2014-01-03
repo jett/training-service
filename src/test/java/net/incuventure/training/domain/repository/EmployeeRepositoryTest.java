@@ -20,7 +20,7 @@ public class EmployeeRepositoryTest {
     @Test
     public void testThis() {
 
-        Employee employee = new Employee("Gayward", "Mendoza");
+        Employee employee = new Employee("Gamboa", "Jett");
 
         employeeRepository.persist(employee);
 
@@ -31,7 +31,7 @@ public class EmployeeRepositoryTest {
     @Test
     public void testCount() {
 
-        Employee employee = new Employee("Gayward", "Mendoza");
+        Employee employee = new Employee("Gamboa", "Jett");
 
         employeeRepository.persist(employee);
 
